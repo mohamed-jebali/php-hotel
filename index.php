@@ -1,22 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- Bootstrap link cdn v 5.3.0 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <!-- link CSS -->
-    <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
-    <h1>
-        hello
-    </h1>
-</body>
-</html>
-
 
 <?php
 
@@ -59,26 +40,58 @@
         ],
 
     ];
+    // var_dump($hotels);
 
 ?>
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP HOTEL</title>
+    <!-- Bootstrap link cdn v 5.3.0 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- link CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- LINK GOOGLE FONTS ROBOTO -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class='text-center title'>
+        PHP HOTEL
+    </h1>
+    <div class="container mx-auto mt-4">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Description</th>
+              <th scope="col">Parking</th>
+              <th scope="col">Vote</th>
+              <th scope="col">Distance to center</th>
+            </tr>
+          </thead>
+          <tbody>
+          <?php foreach ($hotels as $infoHotel) { ?>
+            <tr>
+            <td><?php echo $infoHotel['name']; ?></td>
+            <td><?php echo $infoHotel['description']; ?></td>
+            <td><?php echo $infoHotel['parking'] ? 'Available' : 'Not Available'; ?></td>
+            <td><?php echo $infoHotel['vote']; ?></td>
+            <td><?php echo $infoHotel['distance_to_center']; ?></td>
+            </tr>
+          </tbody>
+          <?php } ?>
+        </table>
+    </div>
+</body>
+</html>
 
-<ul>
-<?php foreach ($hotels as $infoHotel) { ?>
-    <li>
-        <?php echo $infoHotel['name'] . ' '; ?>
-        -
-        <?php echo $infoHotel['description'] . ' '; ?>
-        //
-        <?php echo $infoHotel['parking']; ?>
-        -
-        <?php echo $infoHotel['vote']; ?>
-        -
-        <?php echo $infoHotel['distance_to_center']; ?>
-    </li>
-<?php } ?>
-</ul>
 
 
 <!-- Descrizione
