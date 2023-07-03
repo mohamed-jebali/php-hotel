@@ -66,6 +66,10 @@
         PHP HOTEL
     </h1>
     <div class="container mx-auto mt-4">
+        <form class='mb-5' action="./server.php" method="get">
+            <label for="check_parking">check parking:</label> <br>
+            <input type="text" name='check_parking' id='check_parking' placeholder='check parking availabilty'>
+        </form>
         <table class="table">
           <thead>
             <tr>
@@ -91,7 +95,6 @@
     </div>
 </body>
 </html>
-
 
 
 <!-- Descrizione
